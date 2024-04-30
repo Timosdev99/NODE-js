@@ -1,0 +1,67 @@
+[
+    {
+      "iphone": "iPhone 12 Pro",
+      "model": "A2342",
+      "serialNumber": "1234567890",
+      "time": "10:00 AM",
+      "date": "2024-04-26",
+      "location": "New York"
+    },
+    {
+      "iphone": "iPhone 13",
+      "model": "A2466",
+      "serialNumber": "0987654321",
+      "time": "11:30 AM",
+      "date": "2024-04-26",
+      "location": "Los Angeles"
+    },
+    {
+      "iphone": "iPhone SE",
+      "model": "A2296",
+      "serialNumber": "1357902468",
+      "time": "1:45 PM",
+      "date": "2024-04-26",
+      "location": "Chicago"
+    },
+    {
+      "iphone": "iPhone 11",
+      "model": "A2111",
+      "serialNumber": "2468135790",
+      "time": "3:00 PM",
+      "date": "2024-04-26",
+      "location": "Houston"
+    },
+    {
+      "iphone": "iPhone XR",
+      "model": "A1984",
+      "serialNumber": "9876543210",
+      "time": "4:15 PM",
+      "date": "2024-04-26",
+      "location": "Miami"
+    },
+    {
+      "iphone": "iPhone 8 Plus",
+      "model": "A1864",
+      "serialNumber": "5790318642",
+      "time": "6:20 PM",
+      "date": "2024-04-26",
+      "location": "Seattle"
+    },
+    {
+      "iphone": "iPhone SE (2nd Gen)",
+      "model": "A2275",
+      "serialNumber": "3141592653",
+      "time": "8:00 PM",
+      "date": "2024-04-26",
+      "location": "San Francisco"
+    },
+    {
+      "iphone": "iPhone XS",
+      "model": "A1920",
+      "serialNumber": "4567890123",
+      "time": "9:30 PM",
+      "date": "2024-04-26",
+      "location": "Boston"
+    }
+  ]
+  
