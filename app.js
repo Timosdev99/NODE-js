@@ -15,7 +15,9 @@ const Myemiiter = new myemitter
 
 let product = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'product.json'), 'utf-8')) 
 
-const server = http.createServer((req, res) => { 
+const server = http.createServer()
+
+server.on('request', (req, res) => { 
  
     console.log(req.url, req.method )
     
@@ -48,12 +50,33 @@ if(req.url ==='/' || req.url === '/index'){
     res.statusCode = 200;
     res.setHeader('Content-Type','text/html')
     fliepath = path.join(__dirname, 'data', 'product.json')
-   res.end('you and product page ')
+   res.end('you and product page ') 
     console.log(product)
+
+} else if(req.url ==='/' || req.url === '/large'){  
+   
+    let rs = fs.ReadStream(path.join(__dirname, 'data', 'largefile.txt'), 'utf-8')
+
+  
+    rs.pipe(res);
+
+//    rs.on('data', (large) =>{
+//     res.write(large)
+//     console.log("large server written succesfully")
+//     res.end()
+//    }
+    
+// )
+
+// rs.on('error', (err) => {
+//     res.end(err.message); 
+// })
+
 } else {
     res.statusCode = 404 
-    res.send('page not found')
+    res.end('page not found')
 }
+
 
 
 
