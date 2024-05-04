@@ -27,4 +27,3 @@ if(!fs.existsSync(path.join(__dirname, 'logs')))  {
 
 module.exports = logevent
  
-7

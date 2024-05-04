@@ -55,10 +55,13 @@ if(req.url ==='/' || req.url === '/index'){
 
 } else if(req.url ==='/' || req.url === '/large'){  
    
-    let rs = fs.ReadStream(path.join(__dirname, 'data', 'largefile.txt'), 'utf-8')
-
+    let  rs = fs.ReadStream(path.join(__dirname, 'data', 'largefile.txt'), 'utf-8')
+    res.statusCode = 200;
+    res.setHeader('Content-Type','text/html') 
   
     rs.pipe(res);
+
+    // second way of sending large file  
 
 //    rs.on('data', (large) =>{
 //     res.write(large)
@@ -79,7 +82,6 @@ if(req.url ==='/' || req.url === '/index'){
 
 
 
-
 })
 
 server.listen(port, () => { console.log(`this server is runing on port ${port}`)
@@ -87,15 +89,56 @@ server.listen(port, () => { console.log(`this server is runing on port ${port}`)
 })
 
 
-
 Myemiiter.on('log', (message) => logevent(message))
 
-Myemiiter.emit('log', 'logevent emmitted', ) 
+Myemiiter.emit('log', 'logevent emmitted' ) 
 
 console.log('succesfull')
+
 // Myemiiter.on('log', (message) => logevent(message))
+
+// Myemiiter.emit('log', `logevent emmitted,\t\t ${urlinfo}` ) 
+
+// console.log('succesfull')
 
 // Myemiiter.emit('log', 'logevent emmitted', `${req.url, req.method }`) 
 
-// console.log('succesfull')
+
+console.log('running event loop')
+
+
+
+// node js event loop  
+
+
+fs.readFile(path.join(__dirname, 'info', 'input.txt'), 'utf-8' ,  () => {
+    console.log('input read sucessfully')
+     
+    setTimeout(
+        () => {
+            console.log('interval peroid.')
+        }, 1000  
+    )
+    
+     setImmediate(
+        () => {console.log('running immedaite.')}
+    )
+
+    process.nextTick(
+        () => {
+            console.log('running process.next on the event loop')
+        }
+    )
+
+    //  setInterval(
+    //     () => {
+    //         console.log('intervl as been succesfuly set'), 5000
+    //     }
+    //  )
+
+}) 
+
+
+console.log('ended');
+
 
